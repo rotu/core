@@ -8,7 +8,7 @@ export { compileScript } from './compileScript'
 export { rewriteDefault, rewriteDefaultAST } from './rewriteDefault'
 export { resolveTypeElements, inferRuntimeType } from './script/resolveType'
 
-import { SFCParseResult, parseCache as _parseCache } from './parse'
+import { type SFCParseResult, parseCache as _parseCache } from './parse'
 // #9521 export parseCache as a simple map to avoid exposing LRU types
 export const parseCache = _parseCache as Map<string, SFCParseResult>
 
@@ -25,7 +25,7 @@ export {
   walkIdentifiers,
   extractIdentifiers,
   isInDestructureAssignment,
-  isStaticProperty
+  isStaticProperty,
 } from '@vue/compiler-core'
 
 // Internals for type resolution
@@ -41,33 +41,33 @@ export type {
   SFCBlock,
   SFCTemplateBlock,
   SFCScriptBlock,
-  SFCStyleBlock
+  SFCStyleBlock,
 } from './parse'
 export type {
   TemplateCompiler,
   SFCTemplateCompileOptions,
-  SFCTemplateCompileResults
+  SFCTemplateCompileResults,
 } from './compileTemplate'
 export type {
   SFCStyleCompileOptions,
   SFCAsyncStyleCompileOptions,
-  SFCStyleCompileResults
+  SFCStyleCompileResults,
 } from './compileStyle'
 export type { SFCScriptCompileOptions } from './compileScript'
 export type { ScriptCompileContext } from './script/context'
 export type {
   TypeResolveContext,
   SimpleTypeResolveOptions,
-  SimpleTypeResolveContext
+  SimpleTypeResolveContext,
 } from './script/resolveType'
 export type {
   AssetURLOptions,
-  AssetURLTagConfig
+  AssetURLTagConfig,
 } from './template/transformAssetUrl'
 export type {
   CompilerOptions,
   CompilerError,
-  BindingMetadata
+  BindingMetadata,
 } from '@vue/compiler-core'
 
 /**

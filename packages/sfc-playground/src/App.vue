@@ -10,11 +10,11 @@ const EditorComponent = shallowRef<typeof Monaco | typeof CodeMirror>()
 
 if (import.meta.env.DEV) {
   import('@vue/repl/codemirror-editor').then(
-    mod => (EditorComponent.value = mod.default)
+    mod => (EditorComponent.value = mod.default),
   )
 } else {
   import('@vue/repl/monaco-editor').then(
-    mod => (EditorComponent.value = mod.default)
+    mod => (EditorComponent.value = mod.default),
   )
 }
 
@@ -50,7 +50,7 @@ const store = new ReplStore({
     : `${location.origin}/src/vue-dev-proxy-prod`,
   defaultVueServerRendererURL: import.meta.env.PROD
     ? `${location.origin}/server-renderer.esm-browser.js`
-    : `${location.origin}/src/vue-server-renderer-dev-proxy`
+    : `${location.origin}/src/vue-server-renderer-dev-proxy`,
 })
 
 // enable experimental features
@@ -58,14 +58,14 @@ const sfcOptions: SFCOptions = {
   script: {
     inlineTemplate: !useDevMode.value,
     isProd: !useDevMode.value,
-    propsDestructure: true
+    propsDestructure: true,
   },
   style: {
-    isProd: !useDevMode.value
+    isProd: !useDevMode.value,
   },
   template: {
-    isProd: !useDevMode.value
-  }
+    isProd: !useDevMode.value,
+  },
 }
 
 // persist state
